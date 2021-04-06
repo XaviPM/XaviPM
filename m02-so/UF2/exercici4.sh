@@ -1,21 +1,20 @@
 cd /home users/inf/jism1/ism41010274/Imágenes/
 
-date= $(date +%Y-%m-%d)
+DAY=$(date +%F)
+echo "Pon una extensió:"
+	read EXTENSION
+	echo "Pon un prefijo: (ponga enter para $DAY)"
+read PREFIJO
+	for NAME in *.$EXTENSION
+	do
+		echo "Renaming $NAME to ${DAY}-${NAME}"
+		if [ -z $PREFIJO ];
+		then
+			mv $NAME ${DAY}-${NAME}
+		else
+			mv $NAME $PREFIJO-${NAME}
+		fi
+	done
 
-echo "Quina extensió vols?"
-	read extensio
-echo "Quin nom vols? (Clica enter si vols "$date")
-	read prefix
-
-for NAME in *.$extensio
-do
-	echo "Renombrant $NAME a ${date}-${NAME}"
-	if [ -z $prefix ];
-	then
-		mv $NAME ${date}-${NAME}
-	else
-		mv $NAME $prefix-${NAME}
-	fi
-done
 
 
