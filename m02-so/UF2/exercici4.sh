@@ -4,7 +4,7 @@ date= $(date +%Y-%m-%d)
 
 echo "Quina extensió vols?"
 	read extensio
-echo "Quin nom vols? (Clica enter si vols $date"
+echo "Quin nom vols? (Clica enter si vols $date")
 	read prefix
 
 for NAME *.$extensio
