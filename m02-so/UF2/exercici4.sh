@@ -7,7 +7,7 @@ echo "Quina extensió vols?"
 echo "Quin nom vols? (Clica enter si vols "$date")
 	read prefix
 
-for NAME *.$extensio
+for NAME in *.$extensio
 do
 	echo "Renombrant $NAME a ${date}-${NAME}"
 	if [ -z $prefix ];
