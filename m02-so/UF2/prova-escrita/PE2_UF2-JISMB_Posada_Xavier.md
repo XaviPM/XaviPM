@@ -43,6 +43,7 @@ Amb el grep, estem buscant una cadena de caràcters, que amb l'opció -w són no
 6. **(1 punt ) Com comprovem que la anterior ordre s'hagi executat amb èxit?.**
 echo $?
 
+Al executar la comanda "echo $?", comprovarem si l'anterior ordre ha resultat exitosa. Aquesta comanda ens donarà un resultat. Si ens dona 0, l'anterior ordre s'haurà executat correctament, si ens dona 1, l'ordre no haurà estat exitosa.
 
 7. **(1 punt ) Fer un script qur crei un fitxer .txt de nom la data i hores actuals a /tmp**
 
