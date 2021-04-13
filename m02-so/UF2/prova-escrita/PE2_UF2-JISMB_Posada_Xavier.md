@@ -11,6 +11,7 @@
 
 1. **( 1 punt ) Copia aquest fitxer en el teu repositori remot ( GitLab, GitHub ), a la carpeta /m-02/uf2/prova-escrita/**  
 **Escriu aquí el link.**   
+https://github.com/XaviPM/XaviPM/tree/master/m02-so/UF2/prova-escrita
 
 2. **(1 punt ) Escriu un script que ens dongui informació sobre la caducitat i validesa dels usuaris del Sistema.**  
 chage -l root
