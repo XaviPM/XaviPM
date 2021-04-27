@@ -20,7 +20,7 @@ Indiqueu en cada pregunta l'ordre i també el resultat obtingut (podeu copiar de
 Description=El meu servidor web
 
 [Service]
-ExecStart=/usr/lib/systemd/system -m http.server
+ExecStart=/usr/bin/python3 -m http.server
 
 [Install]
 WantedBy=multi-user.target
