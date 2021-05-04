@@ -104,9 +104,18 @@ abr 30 08:05:48 localhost.localdomain systemd[1]: Started El meu servidor web.
 
 4. **Feu un cron que comprovi cada minut si el servei sshd està corrent o no al nostre sistema operatiu.**
    - Ordre i/o fitxers per a dur a terme el cron:
-   */1 * * * * systemctl is-active sshd
+    * * * * * systemctl is-active sshd
    
 5. **Feu ara que aquest cron miri si el servei sshd està corrent i el pari i enviï un missatge d'error de nivell emergència al journal..**
    - Ordre i/o fitxers per a dur a terme el cron:
-   
+   #!/bin/bash
+   systemctl is-active
+   if [ $? == 0 ]; then
+   	systemctl stop sshd
+   	echo "Hem parat sshd" | systemd-cat -p 0
+   else;
+   	systemctl start sshd
+   	echo "Hem obert sshd" | systemd-cat -p 6
+   fi
    - Proveu d'iniciar i aturar aquest servei i mostreu l'ordre amb la que podem monitoritzar si està o no funcionant (mostra missatges al journal)
+   
