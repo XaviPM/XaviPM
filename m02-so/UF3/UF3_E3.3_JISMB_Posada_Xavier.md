@@ -1,4 +1,4 @@
-# Autor:          e3.4_Firewall_Grup_Cognom_alumne.md
+# Autor:          E3.3_Firewall_JISMB_Posada_Xavier.md
 # Date:           04/05/21
 # Description:    E3.4 Treball de recerca sobre els Firewalls
 
@@ -23,8 +23,8 @@ Defineix quin permís tindrà el paquet a l'hora d'entrar i sortir de la red pri
 ufw status
 
 ## 7. Com instal·lem i habilitem un tallafoc?
-dnf install ufw
-systemctl start ufw.service
+dnf install firewalld
+systemctl start firewalld
 
 
 
@@ -34,7 +34,7 @@ firewall-cmd --get-zones
 
 
 ## 9. Com sabem quina zona del Firewall està seleccionada com a predeterminada? 
- firewall-cmd --get-default-zone
+firewall-cmd --get-default-zone
 
 
 
@@ -47,8 +47,9 @@ firewall-cmd --list-all
 
 
 ## 12. Que és una xarxa?. Com fem per indicar les interficies d'una xarxa?. Com activem una interficie de xarxa?  
-
-
+És un conjunt de dispositius connectats mitjançant cables o via inalàmbica.
+ufw status
+ifconfig enp2 up
 
 
 ## 13. Com indiquem que una regla sigui permanent? 
@@ -58,36 +59,39 @@ firewall-cmd --list-all
 
 
 ## 14. Com podem saber els serveis disponibles del tallafocs?
-
+firewall-cmd --get-services
 
 
 
 
 ## 15. Com podem canviar una regla?
-
-
+Desde firewall-config
+--change-interface
+--change-ports
 
 
 ## 16. Si volem saber més informació de cadascun dels serveis del firewall. Com ho podem fer?.
-
+cat /etc7firewalld/services/example.xml
 
 
 
 ## 17. Quina es la manera mes senzilla de definir excepcions de tallafocs per a serveis ?
-
-
+cp /usr/lib/firewalld/services/ssh.xml /etc/firewalld/services/example.xml
+Ara modifique'm l'arxiu
+vi /etc7firewalld/services/example.xml
+Guarde'm amb :x
+firewall-cmd --reload
 
 
 ## 18. Com podem habilitar un servei per a una zona?. Com podem verificar que el servei es faci permanent (que el  servei encara estigui disponible després d'un reinici. )? 
-
-
+firewall-cmd --zone=public --add-service=http
+firewall-cmd --zone=public --permanent --add-service=http
 
 
 
 ## 19. Que és un port?. Com obrim un port per a una zona?. Com verifiquem que hagi anat bé?
-
-
-
+firewall-cmd --zone=public --add-port=numeroport/protocol
+firewall-cmd --zone=public --list-ports
 
 
 ## 20. Fes un dibuix on apareguins els següents elements: Linux, Kernel, Firewall, zones, Regles, serveis, terminal, xarxa, port, wifi, public, home, work, Internet. Annexa'l al markdown.
