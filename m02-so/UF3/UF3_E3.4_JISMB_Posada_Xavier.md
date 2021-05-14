@@ -21,9 +21,18 @@ Sempre cal anar a la documentació oficial de la distribució que estem configur
 
 
    **Indiqueu les comandes que heu fet servir per arrencar aquests tres serveis en segon pla.**
-   firewall-cmd --zone=public --add-port=80/tcp
-   firewall-cmd --zone=public --add-port=9000/tcp
-   firewall-cmd --zone=public --add-port=65443/tcp
+[ism41010274@g21 ~]$  python -m http.server 80
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+
+[ism41010274@g21 ~]$  python -m http.server 9000
+Serving HTTP on 0.0.0.0 port 9000 (http://0.0.0.0:9000/) ...
+
+[ism41010274@g21 ~]$  python -m http.server 65443
+Serving HTTP on 0.0.0.0 port 65443 (http://0.0.0.0:65443/) ...
+
+
+
+
    
 2. **Feu ara les següents comprovacions sobre el tallafocs i indiqueu-ne tant la comanda com la sortida de l'ordre:**
 
@@ -54,9 +63,14 @@ lines 1-13/13 (END)
 3. **Indiqueu les ordres per a permetre només l'accés als ports 22, 80 i 65443**
 
 4. **Indiqueu les dues maneres que tenim de fer que aquestes regles de tallafocs siguin permanents durant els reinicis del servei**
+--permanent
+--add-port
 
 5. **Busqueu com fer que només es pugui accedir per ssh a la vostra màquina des d'una IP concreta de l'aula. Com a referència mireu aquest post <https://unix.stackexchange.com/questions/453303/firewalld-restrict-traffic-to-specific-ips>.**
 
    **Poseu les comandes que heu utilitzat**
+   
 
    **Expliqueu també quina funció fa la zona 'internal' i el target 'DROP'.
+   DROP: tota connexió entrant es reduix sense resposta, nomès poden't fer connexions de sortida
+   INTERNAL: 
