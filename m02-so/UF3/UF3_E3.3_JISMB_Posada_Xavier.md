@@ -71,7 +71,7 @@ Desde firewall-config
 
 
 ## 16. Si volem saber més informació de cadascun dels serveis del firewall. Com ho podem fer?.
-cat /etc7firewalld/services/example.xml
+cat /etc/firewalld/services/example.xml
 
 
 
