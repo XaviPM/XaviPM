@@ -1,1 +1,2 @@
 He creat el fitxer en el meu repositori local
+He modificat el fitxer en el meu repositori remot
