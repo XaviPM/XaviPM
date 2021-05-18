@@ -29,15 +29,25 @@ I aquí a Debian:
 
 1. **Creeu un disc virtual en un fitxer de 80MB i formateu-lo amb el sistema de fitxers ext4.**
    - Seqüència de comandes
+   sudo dd if=/dev/zero of=/opt/disc bs=80k count=1000
+2. sudo mkfs.ext4 /opt/disc
+3. sudo mount -t loop /opt/disc /mnt
+
 2. **Afegiu aquest disc al vostre fstab per tal que es munti automàticament en reiniciar a /mnt/usuaris. Afegiu-hi ja les opcions per tal d'activar-hi les quotes.**
    - Comproveu que teniu instal.lat el paquet per gestionar les quotes. Ordre d'instal.lació:
    - Feu que tothom pugui llegir i escriure a la carpeta i subcarpetes de /mnt/usuaris. Ordre:
+   chmod 666 /mnt/usuaris
+   
    - Comproveu que es munta correctament abans de reiniciar.  Ordre per comprovar:
+   quotacheck
    - Reinicieu el vostre ordinador i comproveu que ha funcionat.
+   
 3. **Creeu els fitxers de base de dades de quota per a /mnt/usuaris**
    - Ordre:
+   
 4. **Creeu ara l'usuari testuser**
    - Ordre per crear l'usuari:
+   
 5. **Editeu la quota per a l'usuari  testuser per tal que només pugui tenir un limit *hard* de 4MB. **
    - Expliqueu què són els següents paràmetres de la quota.:
      - blocks:
@@ -48,7 +58,9 @@ I aquí a Debian:
      - hard:
    - Ordre i sortida:
    - Comprovació de la quota per a aquest usuari:
+   
 6. **Convertiu-vos amb aquest usuari testuser (su - testuser) i afegiu dades a la carpeta /mnt/usuaris fins a superar els 4M de màxima quota que li hem definit. Poseu-hi diversos fitxers petits i finalment intenteu copiar-hi un fitxer gran que intenti superar la quota.**
+
    - Indiqueu aquí les ordres que heu posat i la sortida (copieu del vostre terminal).
 7. **Comproveu la quota  per a l'usuari quan hi afegiu dades.**
    - Ordre i sortida quan l'usuari ja hi té dades:
