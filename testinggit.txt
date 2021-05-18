@@ -1,1 +1,2 @@
-He creat el fitxer en el meu repositori local
+Editat desde terminal
+He tornat a modificar desde local
