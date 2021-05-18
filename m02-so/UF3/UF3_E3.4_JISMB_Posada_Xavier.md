@@ -21,13 +21,13 @@ Sempre cal anar a la documentació oficial de la distribució que estem configur
 
 
    **Indiqueu les comandes que heu fet servir per arrencar aquests tres serveis en segon pla.**
-[ism41010274@g21 ~]$  python -m http.server 80
+[ism41010274@g21 ~]$  python -m http.server 80&
 Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 
-[ism41010274@g21 ~]$  python -m http.server 9000
+[ism41010274@g21 ~]$  python -m http.server 9000&
 Serving HTTP on 0.0.0.0 port 9000 (http://0.0.0.0:9000/) ...
 
-[ism41010274@g21 ~]$  python -m http.server 65443
+[ism41010274@g21 ~]$  python -m http.server 65443&
 Serving HTTP on 0.0.0.0 port 65443 (http://0.0.0.0:65443/) ...
 
 
@@ -61,16 +61,17 @@ lines 1-13/13 (END)
 
 
 3. **Indiqueu les ordres per a permetre només l'accés als ports 22, 80 i 65443**
+firewall-cmd --zone=public --list-all
 
 4. **Indiqueu les dues maneres que tenim de fer que aquestes regles de tallafocs siguin permanents durant els reinicis del servei**
---permanent
---add-port
-
+--permanent --add-port
+--runtime-to-permanent
+<
 5. **Busqueu com fer que només es pugui accedir per ssh a la vostra màquina des d'una IP concreta de l'aula. Com a referència mireu aquest post <https://unix.stackexchange.com/questions/453303/firewalld-restrict-traffic-to-specific-ips>.**
 
    **Poseu les comandes que heu utilitzat**
-   
+   firewall-cmd --permanent --zone=public --add-rich-rule= 'rule family=ipv4 source adress=10.200.245.223 service name="ssh" accept
 
    **Expliqueu també quina funció fa la zona 'internal' i el target 'DROP'.
-   DROP: tota connexió entrant es reduix sense resposta, nomès poden't fer connexions de sortida
-   INTERNAL: 
+   DROP: tota connexió entrant es reduix sense resposta, nomès poden't fer connexions de sortida. És la de més baix nivell
+   INTERNAL: Per a xarxes internes, que l'ordinador funcioni com a router
