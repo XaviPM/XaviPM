@@ -1,2 +1,6 @@
-Editat desde terminal
+
+Editat desde terminail
 He tornat a modificar desde local
+He creat el fitxer en el meu repositori local
+He modificat el fitxer en el meu repositori remot
+
