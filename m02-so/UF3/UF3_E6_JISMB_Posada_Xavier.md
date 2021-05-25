@@ -29,35 +29,38 @@ I aquí a Debian:
 
 1. **Creeu un disc virtual en un fitxer de 80MB i formateu-lo amb el sistema de fitxers ext4.**
    - Seqüència de comandes
-   sudo dd if=/dev/zero of=/opt/disc bs=80k count=1000
+   sudo dd if=/dev/zero of=/dev/zero bs=80k count=1000
 2. sudo mkfs.ext4 /opt/disc
-3. sudo mount -t loop /opt/disc /mnt
+3. sudo mount -o loop /opt/disc /mnt/xavierpm/
 
 2. **Afegiu aquest disc al vostre fstab per tal que es munti automàticament en reiniciar a /mnt/usuaris. Afegiu-hi ja les opcions per tal d'activar-hi les quotes.**
-   - Comproveu que teniu instal.lat el paquet per gestionar les quotes. Ordre d'instal.lació:
+   - Comproveu que teniu instal.lat el paquet per gestionar les quotes. Ordre d'instal.lació: dnf install quota
    - Feu que tothom pugui llegir i escriure a la carpeta i subcarpetes de /mnt/usuaris. Ordre:
-   chmod 666 /mnt/usuaris
+   chmod -R 777 /mnt/xavierpm/
    
    - Comproveu que es munta correctament abans de reiniciar.  Ordre per comprovar:
-   quotacheck
+ df -h
+ 
    - Reinicieu el vostre ordinador i comproveu que ha funcionat.
    
 3. **Creeu els fitxers de base de dades de quota per a /mnt/usuaris**
-   - Ordre:
+   - Ordre: quotacheck -cug /mnt/xavierpm/
    
 4. **Creeu ara l'usuari testuser**
-   - Ordre per crear l'usuari:
+   - Ordre per crear l'usuari: adduser testusuaris 
    
 5. **Editeu la quota per a l'usuari  testuser per tal que només pugui tenir un limit *hard* de 4MB. **
    - Expliqueu què són els següents paràmetres de la quota.:
-     - blocks:
-     - soft:
-     - hard:
-     - inodes:
-     - soft:
-     - hard:
+     - blocks: numero de sectors escrits
+     - soft: avia a l'usuari que s'aproxima al límit
+     - hard: límit de la quota
+     - inodes: nombre d'arxius i directoris
+     - soft: limit soft d'inodes (0= no lmit)
+     - hard: limit de inodes
    - Ordre i sortida:
+   edquota testuser
    - Comprovació de la quota per a aquest usuari:
+   quota testuser
    
 6. **Convertiu-vos amb aquest usuari testuser (su - testuser) i afegiu dades a la carpeta /mnt/usuaris fins a superar els 4M de màxima quota que li hem definit. Poseu-hi diversos fitxers petits i finalment intenteu copiar-hi un fitxer gran que intenti superar la quota.**
 
