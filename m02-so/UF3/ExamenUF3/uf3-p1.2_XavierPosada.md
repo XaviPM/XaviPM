@@ -87,11 +87,11 @@ fi
 
 
     - [0,5 punts] Què hauríem de canviar al nostre script per tal que enviés un missatge de prioritat 'info' al journal amb informació que ens digui si l'hem arrencat o si l'hem parat?
-        ```echo "S'ha aturat el servei nginx" | systemd-cat  -p info```
-        ```echo "S'ha activat el servei nginx" | systemd-cat  -p info```
+        echo "S'ha aturat el servei nginx" | systemd-cat  -p info
+        echo "S'ha activat el servei nginx" | systemd-cat  -p info
 
     - [0,5 punts] Com podem veure els missatges de prioritat 'info' del log?
-        ```journalctl -p info -b```
+        journalctl -p info -b
 5. [2 punts]  **Una mica sobre quotes:** 
    - [0,25 punts] Per a que serveixen les quotes de disc?
    Una quota serveix per assiganr un espai determinat del disc a un usuari.
