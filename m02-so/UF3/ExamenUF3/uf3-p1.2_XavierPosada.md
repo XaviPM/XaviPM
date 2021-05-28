@@ -19,7 +19,7 @@ Estem encarregats d'administrar el sistema operatiu linux d'un servidor a la nos
     - [0,25 punts] Ordre per activar el servei de ssh en iniciar el sistema operatiu:
         ```sytemctl enable sshd```
     - [0,25 punts] Ordre per arrencar ara el servei de ssh:
-        ``systemctl start sshd``` 
+        ```systemctl start sshd```
     - [0,25 punts] Odre i sortida per veure l'estat del servei ssh:
         ```systemctl status sshd```
     - [0,25 punts] Ordre per activar el servei d'hora en iniciar el sistema operatiu:
