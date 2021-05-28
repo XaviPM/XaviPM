@@ -68,7 +68,8 @@ Estem encarregats d'administrar el sistema operatiu linux d'un servidor a la nos
     - [0,5 punts] Script que comprova si està arrencat i l'atura
     - [0,5 punts] Script que comprova si està aturat i l'arrenca
    
-```#!/bin/bash
+```
+#!/bin/bash
 
 
 systemctl is-active nginx
@@ -80,8 +81,9 @@ else
         echo $(systemctl start nginx)
         echo "El servei nginx està inactiu, ara s'activarà"
         echo "S'ha activat el servei nginx"
-fi 
+fi
 ```
+
 
 
     - [0,5 punts] Què hauríem de canviar al nostre script per tal que enviés un missatge de prioritat 'info' al journal amb informació que ens digui si l'hem arrencat o si l'hem parat?
