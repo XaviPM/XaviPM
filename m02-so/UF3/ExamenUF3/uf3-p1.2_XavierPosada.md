@@ -57,8 +57,8 @@ Estem encarregats d'administrar el sistema operatiu linux d'un servidor a la nos
         ```#firewall-cmd --zone=public --add-port=22/tcp ```
         ``` #firewall-cmd --zone=public --add-port=80/tcp ```
    - [0,5 punts] Ordre i sortida on es vegi els ports que el tallafocs està filtrant actualment i la zona activa:
-    ```[root@g21 ism41010274]# firewall-cmd --zone=public --list-ports
-        20/tcp 80/tcp 9000/tcp 65443/tcp```
+    [root@g21 ism41010274]# firewall-cmd --zone=public --list-ports
+        20/tcp 80/tcp 9000/tcp 65443/tcp
    - [0,25 punts] Feu que aquesta configuració sigui permanent. Indiqueu la/les ordre(s) per a fer-ho:
         ``` #firewall-cmd --zone=public --permanent --add-port=22/tcp ```
         ``` #firewall-cmd --zone=public --permanent --add-port=80/tcp ```
@@ -67,12 +67,12 @@ Estem encarregats d'administrar el sistema operatiu linux d'un servidor a la nos
 
     - [0,5 punts] Script que comprova si està arrencat i l'atura
     - [0,5 punts] Script que comprova si està aturat i l'arrenca
-    
-    #!/bin/bash
+   
+```#!/bin/bash
 
 
 systemctl is-active nginx
-```if [ $? == 0 ]; then
+if [ $? == 0 ]; then
         echo $(systemctl stop nginx)
         echo "El servei nginx està actiu, ara s'aturarà "
         echo "S'ha aturat el servei nginx"
