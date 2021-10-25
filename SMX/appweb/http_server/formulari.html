@@ -1,0 +1,93 @@
+
+<html>
+
+	<head>
+		<title>Formulari</title>
+	
+	</head>
+	<style>
+	form { 
+		margin: 0 auto;
+		width:250px;
+	}
+	</style>
+	</style>
+	<body style="background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEXT09OdeqMBAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC); background-repeat:no-repeat; background-attachment:fixed; background-size:cover">
+		<form name="nombre_formulario" action="procesar.asp" method="POST" target="_blank">
+			<p>Nom</p>
+			<input type="text" name="nom" required><br>
+			<p>1r cognom</p>
+			<input type="text" name="1cog" required><br>		
+			<p>2n cognom</p>
+			<input type="text" name="2cog" required><br>	
+			<p>Edat</p>
+			<input type="text" name="edat" required><br>
+			<p>Color dels ulls</p>
+			<p><select name="Color dels ulls" required></p>
+				<option>Marrons</option>
+				<option>Blaus</option>
+				<option>Verds</option>
+				<option>Negres</option>
+			</select>
+			<p>Adre&#231a de courreu</p>
+			<p><input type="email" name="correu" size="40" required></p>
+			<p>M&#242duls que est&#224s cursant</p>
+			<p><input type="checkbox" name="m0">M01</p>
+			<p><input type="checkbox" name="m0">M02</p>
+			<p><input type="checkbox" name="m0">M03</p>
+			<p><input type="checkbox" name="m0" checked>M04</p>
+			<p><input type="checkbox" name="m0">M05</p>
+			<p><input type="checkbox" name="m0" checked>M06</p>
+			<p><input type="checkbox" name="m0">M07</p>
+			<p><input type="checkbox" name="m0">M08</p>
+			<p>S&#232ries preferides</p>
+			<select name="menu[]" size="5" multiple>
+				<option value=1>Stranger Things</option>
+				<option value=2>Prision Break</option>
+				<option value=3>Breaking bad</option>
+				<option value=4 selected>The Walking Dead</option>
+				<option value=5 selected>The Big Bang Theory</option>
+			</select>
+			  <p>Veus les s&#232ries en versi&#243 original o tradu&#239des?</p>
+			  <div>
+				<input type="radio"  name="llengua" value="1">
+				<label for="Versió original">Versi&#243 original</label><br>
+				<input type="radio"  name="llengua" value="2" checked>
+				<label for="Traduïda">Tradu&#239da</label>	
+			  </div>
+			  <p>Quantes persones viuen a casa teva?</p>
+			  <select name="familiars">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>Més de 5</option>
+			 </select>
+		     <p>Tens mascotes?</p>
+			 <div>
+				<input type="radio" " name="sino" value="1">
+				<label for="Si">Si</label>
+				<input type="radio" name="sino" value="2">
+				<label for="No">No</label>	
+			 </div>
+			 <p>Nom de les mascotes</p>
+				<input type="text"  name="nommascotes" required><br>  
+		     <p>Les teves aficions</p>
+				<textarea name="aficions" rows="10" cols="70" maxlength="500"></textarea> 
+			 <p>Imatges</p>
+			 	<p><input type="file" name="imatge" accept="image/png, image/jpeg, image/gif" multiple></p>
+			<br>
+			<br>
+			<button type="reset" name="reset">Neteja</button>
+			<button type="submite" name="enviar">Enviar</button>
+			
+			
+			
+			
+			
+			
+		</form>
+	</body>
+
+</html>
