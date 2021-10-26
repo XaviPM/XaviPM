@@ -1,0 +1,39 @@
+body {
+background-color: yellow;
+background-image: url(Degradat.png);  background-repeat:no-repeat; background-attachment:fixed; background-size:cover;
+
+}
+
+.h21 {
+color: red;
+text-align: center;
+background-color: lightblue;
+border-style: solid;
+border-width:6px;
+}
+
+.h22 {
+color: green;
+text-align: center;
+background-color: lightblue;
+border-style: double;
+border-width:6px;
+}
+
+
+.p1 {
+color: white;
+text-align: center;
+font-size: 25px;
+background-color: purple;
+border-style:dotted;
+border-width:4px
+}
+
+.p2  {
+color: blue;
+text-align: center;
+background-color: ffaaff;
+border-style:dotted;
+border-width:8px
+}
